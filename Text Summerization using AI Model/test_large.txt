@@ -1,0 +1,26 @@
+I’m looking for a skilled backend developer to build and deploy a lightweight WhatsApp bot.
+The bot will receive a photo of a dress on a mannequin from the user, send the image with a preset prompt to the Gemini 2.5 Flash Image (“Nano Banana”) model, and return the edited image (with a real model) back to the user through WhatsApp.
+
+The entire flow should be automated, stable, and production-ready. Ideally built in Python (FastAPI) or Node.js, and deployed on a simple hosting service (e.g., Render, Fly.io, Cloud Run).
+
+Deliverables
+WhatsApp Webhook Setup
+Set up webhook using Meta’s WhatsApp Cloud API.
+Handle incoming messages and media (image) from users.
+Verify webhook subscription with a VERIFY_TOKEN.
+Image Download & Upload
+Download user-sent mannequin image using media ID.
+Upload processed image back to WhatsApp and send as a reply.
+Gemini API Integration
+Call Gemini 2.5 Flash Image API with:
+User image as input
+Preset prompt provided by me (e.g., Put this on a middle eastern female model in a minimalistic outdoors background)
+Handle response and extract generated image.
+Bot Logic
+Limit number of images per batch (e.g., max 10 per user per session).
+Return clear error messages for unsupported file types or failed generations.
+Include basic logging for debugging.
+Deployment
+Deploy webhook to a live URL (e.g., Render/Fly.io/Cloud Run).
+Configure environment variables for tokens and keys.
+Provide instructions for re-deployment or key rotation.

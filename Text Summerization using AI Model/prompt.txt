@@ -1,0 +1,81 @@
+You are to create a COMPLETE and EASY-TO-USE Python project that performs accurate text summarization locally using an open-source Hugging Face model.
+
+### 🎯 Project Goal
+Create a Python application that lets a normal user summarize any text file — even a large document or book — without needing coding skills or an API key.
+
+---
+
+### ✅ FEATURES REQUIRED
+
+1. *Local Model Only*
+   - Use Hugging Face’s transformers library with a summarization model like:
+     - facebook/bart-large-cnn (default)
+     - google/pegasus-xsum (optional user choice)
+   - Must run fully offline after model download.
+
+2. *User Experience*
+   - The script should be simple for non-coders:
+     - Users just double-click or drag a file to summarize.
+     - Or run via terminal:  
+       python summarizer.py --input myfile.txt
+   - Show friendly messages like:
+     - “📄 Reading file...”
+     - “⚙️ Summarizing (please wait)...”
+     - “✅ Summary complete! Saved as summary.txt”
+
+3. *Long Text Handling*
+   - Automatically detect if text is too long for the model.
+   - Split text into chunks intelligently (e.g., 2500–3000 tokens).
+   - Add small overlap between chunks to preserve context.
+   - Summarize each chunk separately, then combine all summaries.
+   - Optionally summarize the combined text again for a final concise summary.
+
+4. *Performance*
+   - Detect if GPU is available (torch.cuda.is_available()).
+   - Use GPU automatically if found.
+   - Show progress (e.g., using tqdm).
+   - Optimize processing speed.
+
+5. *Error Handling*
+   - Check if input file exists.
+   - Handle empty or unreadable files gracefully.
+   - Catch model download or memory errors.
+   - Never crash; always show a helpful message.
+
+6. *Command-Line Options (argparse)*
+   - --input : path to text file (required)
+   - --output: path to save summary (default: summary.txt)
+   - --model : model name (default: facebook/bart-large-cnn)
+   - --max_length: desired summary length (default 250 words)
+   - Example:
+     
+     python summarizer.py --input book.txt --output book_summary.txt --model google/pegasus-xsum
+     
+
+7. *Output*
+   - Print the summary to the console (nicely formatted).
+   - Save it automatically to the output file.
+   - Show total processing time at the end.
+
+8. *Optional GUI (bonus if easy)*
+   - If possible, add a simple text-based interface using tkinter where users can:
+     - Select a file via file picker.
+     - Click a button to summarize.
+     - See and copy the summary.
+
+---
+
+### 🧩 STRUCTURE
+
+Functions to include:
+- read_file(file_path)
+- split_text(text, max_chunk_size)
+- summarize_text(text, model_name, max_length)
+- combine_summaries(summaries)
+- save_summary(summary, output_path)
+- main() — orchestrates everything.
+
+---
+
+### ⚙️ DEPENDENCIES
+Add installation instructions in the code comments:

@@ -1,0 +1,1 @@
+This is a sample text for testing the summarization tool. It contains several sentences to ensure the model can process it properly. The goal is to create a concise summary that captures the main points. This text is intentionally short to test basic functionality without chunking. The summarizer should handle this easily and produce a brief output.

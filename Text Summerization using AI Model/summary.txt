@@ -1,0 +1,1 @@
+The goal is to create a concise summary that captures the main points. This text is intentionally long to test chunking functionality. We will repeat this text multiple times to simulate a large document. This is a sample text for testing the summarization tool.
